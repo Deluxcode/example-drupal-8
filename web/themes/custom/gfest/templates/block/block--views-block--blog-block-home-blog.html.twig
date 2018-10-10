@@ -1,0 +1,16 @@
+<div{{ attributes.addClass('lastest_post_section', 'section') }}>
+  <div class="container">
+    {{ title_prefix }}
+    {% if label %}
+      <div class="main_page">
+        <div class="post_wrap">
+          <h2{{ title_attributes }}>{{ label }}</h2>
+        </div>
+      </div>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+</div>

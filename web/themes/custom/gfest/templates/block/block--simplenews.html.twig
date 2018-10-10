@@ -1,0 +1,12 @@
+<div{{ attributes.addClass('subscribe_section', 'section') }}>
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes.addClass('subscribe_title') }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      <div class="subscribe_form">
+          {{ content }}
+      </div>
+    {% endblock %}
+</div>

@@ -1,0 +1,49 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+
+
+require_once('inc/suggestions.inc');
+require_once('inc/preprocess.inc');
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gfest_form_comment_form_alter(&$form, FormStateInterface $form_state) {
+  if (isset($form['actions']['preview'])) {
+    unset($form['actions']['preview']);
+  }
+  if (isset($form['actions']['submit'])) {
+    $form['actions']['submit']['#value'] = t('Send message');
+  }
+  if (isset($form['comment_body']['widget'][0])) {
+    $form['comment_body']['widget'][0]['#title_display'] = 'invisible';
+    $form['comment_body']['widget'][0]['#format'] = 'restricted_html';
+  }
+  if (isset($form['field_comment_email']['widget'][0]['#title'])) {
+    $form['field_comment_email']['widget'][0]['#title_display'] = 'invisible';
+  }
+  if (isset($form['field_comment_email']['widget'][0]['value']['#title_display'])) {
+    $form['field_comment_email']['widget'][0]['value']['#title_display'] = 'invisible';
+  }
+  if (isset($form['author']['name']['#title'])) {
+    $form['author']['name']['#title'] = FALSE;
+  }
+  if (isset($form['author']['name'])) {
+    $form['author']['name']['#placeholder'] = t('Name');
+  }
+  if (isset($form['actions']['submit'])) {
+    $form['actions']['submit']['#attributes']['class'][] = 'send_message_btn';
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function gfest_page_attachments_alter(array &$attachments) {
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+}

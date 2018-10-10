@@ -1,0 +1,26 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      'https://fonts.googleapis.com/css?family=PT+Sans': { type: external, minified: true }
+      assets/fonts/cuprum/font.css: {}
+      assets/css/style.css: {}
+      assets/css/custom/all.css: {}
+  js:
+    assets/js/behaviors/main.behaviors.js: {}
+  dependencies:
+    - core/drupal
+#    - core/drupal.ajax
+#    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+#    - core/jquery.ui.selectmenu
+
+owlcarousel:
+  version: 2.2.0
+  css:
+    theme:
+      assets/css/owl.carousel.css: {}
+  js:
+    assets/js/owl.carousel.min.js: {}
+    assets/js/behaviors/owlcarousel.behaviors.js: {}

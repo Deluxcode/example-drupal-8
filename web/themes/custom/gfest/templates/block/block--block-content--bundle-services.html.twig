@@ -1,0 +1,13 @@
+<div{{ attributes.addClass('services_section', 'section') }}>
+  <div class="container">
+    <div class="section_title">
+      {{ title_prefix }}
+      {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+      {% endif %}
+      {{ title_suffix }}
+      {{ content|without('field_block_services_items') }}
+    </div>
+    {{ content.field_block_services_items }}
+  </div>
+</div>

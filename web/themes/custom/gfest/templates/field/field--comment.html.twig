@@ -1,0 +1,10 @@
+<div{{ attributes.addClass('article_comments') }}>
+  {{ title_prefix }}
+  <div{{ title_attributes.addClass('article_comments_title') }}>{% if element['#object'].comment.0.comment_count %}{{ element['#object'].comment.0.comment_count }} {% endif %}{{ label }}</div>
+  {{ title_suffix }}
+  {{ comments }}
+  {% if comment_form %}
+    <div{{ content_attributes.addClass('article_comments_title') }}>{{ ('Leave a Reply')|t }}</div>
+    {{ comment_form }}
+  {% endif %}
+</div>

@@ -1,0 +1,18 @@
+<div class="top_bg_image">
+  {{ content.field_page_header_image }}
+</div>
+<div id="top" class="contacts_title_section section">
+  <h1{{ title_attributes }}>{{ label }}</h1>
+</div>
+<div{{ attributes.addClass('contacts_section', 'section') }}>
+  <div class="container">
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <div class="contacts">
+      {{ content.body }}
+    </div>
+    {{ content.field_page_block_contact }}
+  </div>
+  {{ metadata }}
+</div>
+{{ content.field_page_gmap }}

@@ -1,0 +1,63 @@
+<div class="top_bg_image">
+  {{ content.field_page_header_image }}
+</div>
+<article{{ attributes }}>
+  {{ title_prefix }}
+  <div id="top" class="top_text_section section">
+    <h1{{ title_attributes.addClass('article_title') }}>{{ label }}</h1>
+  </div>
+  {{ title_suffix }}
+  <div class="article_content_wrap section">
+    <div class="container">
+      <div class="article_info">
+        {% if display_submitted %}
+          <div class="article_decor_separator">
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"></i>
+          </div>
+          <span class="arcticle_date">{{ date_ago }}</span>
+          <div class="article_decor_separator">
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"></i>
+          </div>
+          <span{{ author_attributes.addClass('article_author') }}>{% trans %}by {{ author_name }}{% endtrans %}</span>
+        {% endif %}
+      </div>
+      <div class="shared_links_block">
+        <a class="shared_link_btn twitter" href="#">
+          <i class="fab fa-twitter"></i>
+          <span>Twitter</span>
+        </a>
+        <a class="shared_link_btn linkedin" href="#">
+          <i class="fab fa-linkedin-in"></i>
+          <span>Linkedin</span>
+        </a>
+        <a class="shared_link_btn facebook" href="#">
+          <i class="fab fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+        <a class="shared_link_btn github" href="#">
+          <i class="fab fa-github"></i>
+          <span>Github</span>
+        </a>
+        <a class="shared_link_btn pinterest" href="#">
+          <i class="fab fa-pinterest"></i>
+          <span>Pinterest</span>
+        </a>
+        <a class="shared_link_btn google_plus" href="#">
+          <i class="fab fa-google-plus"></i>
+          <span>Google+</span>
+        </a>
+      </div>
+      <div{{ content_attributes.addClass('article_content') }}>
+        {{ content|without('comment', 'field_page_header_image') }}
+        {{ metadata }}
+      </div>
+      {{ content.comment }}
+    </div>
+  </div>
+</article>

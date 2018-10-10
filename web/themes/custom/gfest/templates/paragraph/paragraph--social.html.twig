@@ -1,0 +1,13 @@
+{%
+    set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+    {% block content %}
+        <a href="{{ content.field_social_link[0]['#plain_text'] }}"{{ attributes.addClass(classes) }}>{{ content.field_social_icon }}</a>
+    {% endblock %}
+{% endblock paragraph %}

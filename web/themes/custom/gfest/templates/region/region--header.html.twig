@@ -1,0 +1,7 @@
+<header class="header">
+  {% if content %}
+    <div{{ attributes.addClass('region', 'region-'~region, 'container') }}>
+      {{ content }}
+    </div>
+  {% endif %}
+</header>

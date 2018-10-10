@@ -1,0 +1,31 @@
+<article{{ attributes.addClass('article') }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="article_thumb">
+    {{ content.field_article_image }}
+  </div>
+  <div class="article_info">
+    {{ content.field_article_tags }}
+    <div class="article_decor_separator">
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i>
+    </div>
+    <span class="arcticle_date">{{ created }}</span>
+    <div class="article_decor_separator">
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i>
+    </div>
+    <span class="article_author">{% trans %}by {{ author_name }}{% endtrans %}</span>
+  </div>
+  <div class="article_text">
+    <h3{{ title_attributes.addClass('article_title') }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>
+    <div{{ content_attributes.addClass('article_short_descr') }}>
+      {{ content.body }}
+    </div>
+    <a class="article_btn" href="{{ url }}">{{ ('read more'|t) }}</a>
+  </div>
+</article>

@@ -1,0 +1,12 @@
+<div{{ attributes.addClass('solution_block') }}>
+  {{ content.field_solution_image }}
+  <div{{ content_attributes.addClass('solution_descr') }} class="solution_descr">
+    <div class="descr_text">
+      {{ title_prefix }}
+      {{ title_suffix }}
+      <h3{{ title_attributes }}>{{ label }}</h3>
+      {{ content.body }}
+      <a class="btn" href="{{ url }}">{{ ('see details'|t) }}</a>
+    </div>
+  </div>
+</div>

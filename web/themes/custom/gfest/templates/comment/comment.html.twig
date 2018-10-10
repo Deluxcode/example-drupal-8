@@ -1,0 +1,11 @@
+<div{{ attributes.addClass('js-comment', 'comment') }}>
+  <div class="comment_user_info">
+    {{ user_picture }}
+    <span>{% trans %}by{% endtrans %} {{ author }}</span>
+  </div>
+  <div{{ content_attributes.addClass('comment_descr') }}>
+    <div class="comment_info">{{ created }} <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark></div>
+    <p class="comment_text">{{ content|without('links', 'history') }}</p>
+    {{ content.links }}
+  </div>
+</div>

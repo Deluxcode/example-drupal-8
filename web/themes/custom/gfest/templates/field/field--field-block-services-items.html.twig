@@ -1,0 +1,5 @@
+<div{{ attributes.addClass('services_blocks_wrap') }}>
+  {% for item in items %}
+    <div{{ item.attributes.addClass('service_block') }}>{{ item.content }}</div>
+  {% endfor %}
+</div>

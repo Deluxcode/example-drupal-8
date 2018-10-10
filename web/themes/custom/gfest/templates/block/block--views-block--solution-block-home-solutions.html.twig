@@ -1,0 +1,14 @@
+<div{{ attributes.addClass('solutions_section', 'section') }}>
+  <div class="container">
+    {{ title_prefix }}
+    {% if label %}
+      <div class="section_title">
+        <h2{{ title_attributes }}>{{ label }}</h2>
+      </div>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+</div>

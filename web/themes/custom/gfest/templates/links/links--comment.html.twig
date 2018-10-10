@@ -1,0 +1,15 @@
+{% if links -%}
+    <div{{ attributes.addClass('comments_links', 'clearfix') }}>
+        {%- for item in links -%}
+            <span{{ item.attributes.addClass('comments_link') }}>
+                {%- if item.link -%}
+                    {{ item.link }}
+                {%- elseif item.text_attributes -%}
+                    <span{{ item.text_attributes }}>{{ item.text }}</span>
+                {%- else -%}
+                    {{ item.text }}
+                {%- endif -%}
+            </span>
+        {%- endfor -%}
+    </div>
+{%- endif %}

@@ -1,0 +1,32 @@
+<div{{ attributes.addClass('main_page') }}>
+  <div class="post_wrap">
+    {{ title_prefix }}
+    <div{{ title_attributes.addClass('post_tile') }}>{{ label }}</div>
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="post_info">
+        <div class="post_info_date">
+          {{ created|raw }}
+        </div>
+        <div class="post_user_pick">
+          {{ author_picture }}
+          <span{{ author_attributes }}>{% trans %}by {{ author_name }}{% endtrans %}</span>
+        </div>
+      </div>
+    {% endif %}
+    <div class="post_content">
+      <div class="post_image">
+        {{ content.field_article_image }}
+      </div>
+      {{ content.field_article_tags }}
+      <div class="post_short_descr">
+        {{ content.body }}
+      </div>
+      <div class="buttons_wrap">
+        <a class="btn blue_btn" href="{{ url }}">{{ ('read it now'|t) }}</a>
+        <a class="btn accent_btn" href="{{ blog_url }}">{{ ('view blog'|t) }}</a>
+      </div>
+      {{ metadata }}
+    </div>
+  </div>
+</div>

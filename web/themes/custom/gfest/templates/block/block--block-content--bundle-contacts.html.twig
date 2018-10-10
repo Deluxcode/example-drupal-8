@@ -1,0 +1,11 @@
+<div{{ attributes.addClass('contacts_section', 'section') }}>
+  <div class="container">
+    {{ content.field_contact_form }}
+    <div class="contacts_logo">
+      <img src="{{ base_path ~ directory }}/assets/img/logo_contacts.png" alt="" />
+      {{ title_prefix }}
+      {{ title_suffix }}
+    </div>
+    {{ content.field_contact_info }}
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="top_bg_image section">
+  {{ content.field_page_header_image }}
+</div>
+<div id="top" class="info_section section">
+  <div class="info_text_wrap">
+    <div class="container">
+      <div class="info_text">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        {{ content.body }}
+        {{ metadata }}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="orange_block">
+      <img class="simple_logo" src="{{ base_path ~ directory }}/assets/img/logo_g.png" alt="logo">
+      {{ content.field_page_side_info }}
+    </div>
+  </div>
+</div>
+{{ content.field_page_services }}
